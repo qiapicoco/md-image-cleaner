@@ -11,7 +11,7 @@ import shutil
 import sys
 
 os.environ["QT_FONT_DPI"] = "96"          # 与原版 __main__ 保持一致
-BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CASE = sys.argv[1] if len(sys.argv) > 1 else "basic"
 
 work = os.path.join(BASE, "core", "_shot", CASE)

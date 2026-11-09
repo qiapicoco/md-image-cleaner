@@ -8,7 +8,7 @@
 import os
 import shutil
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SRC = os.path.join(ROOT, "core", "fixtures", "basic")
 DST = os.path.join(ROOT, "core", "_shot", "basic")
 

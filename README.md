@@ -134,7 +134,8 @@ shared/          插件共用的 JS 核心（纯函数）
 obsidian-plugin/ Obsidian 插件
 vscode-extension/VSCode 扩展
 typora-plugin/   Typora 插件（obgnail/typora_plugin 自定义插件）
-tools/           构建、截图、像素对拍、插件打包
+tools/           构建、插件打包、发版脚本
+  dev/           开发期工具（截图、像素对拍、度量），不参与构建
 docs/            界面截图对拍图 + 重构设计记录（refactor-plan.md）
 legacy/          原 PyQt5 版本（作为回归基准，别删）
 ```

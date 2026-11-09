@@ -6,7 +6,7 @@
 
 """像素对拍：比较两张同尺寸截图，输出差异率、差异热力图与分块定位。
 
-用法：python tools/diff.py docs/ref_original_empty.png docs/new_empty.png [out_prefix]
+用法：python tools/dev/diff.py docs/ref_original_empty.png docs/new_empty.png [out_prefix]
 """
 import sys
 

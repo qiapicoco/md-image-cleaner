@@ -6,7 +6,7 @@
 
 """一键取图：启动 exe（可带 --open），等窗口出现后截图，再关闭。
 
-用法：python tools/snap.py 输出.png [md路径] [等待秒]
+用法：python tools/dev/snap.py 输出.png [md路径] [等待秒]
 """
 import ctypes
 import ctypes.wintypes as wt
@@ -16,7 +16,7 @@ import sys
 import time
 
 TITLE = "Typora清理未引用图片"
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 EXE = os.path.join(ROOT, "desktop", "dist", "MDImageCleaner.exe")
 
 u = ctypes.windll.user32

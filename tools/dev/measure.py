@@ -6,7 +6,7 @@
 
 """界面度量：把关键元素的位置量出来，用于让新版对齐原版像素。
 
-用法：python tools/measure.py docs/ref_original_empty.png
+用法：python tools/dev/measure.py docs/ref_original_empty.png
 """
 import sys
 

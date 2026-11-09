@@ -9,7 +9,7 @@ import os
 
 from PIL import Image, ImageDraw
 
-OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
                    "desktop", "res")
 S = 1024
 
