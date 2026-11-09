@@ -23,13 +23,24 @@ git push gitee  master --follow-tags   # Gitee
 两个远端都是 HTTPS，凭据存在 Windows 凭据管理器（`git-credential-manager`），
 配好一次之后不会再提示输密码。
 
-| 远端 | 地址 | 凭据 |
-| --- | --- | --- |
-| `origin` | `https://github.com/qiapicoco/typora-assets-image-cleaner.git` | GitHub PAT（note: `md-image-cleaner-push-2`，仅 `repo` 权限） |
-| `gitee` | `https://gitee.com/qiapicoco/typora-assets-image-cleaner.git` | Gitee 私人令牌（note: `WorkBuddy-key`） |
+| 远端 | 地址 | 凭据 | 有效期 |
+| --- | --- | --- | --- |
+| `origin` | `https://github.com/qiapicoco/typora-assets-image-cleaner.git` | GitHub PAT（note: `GitHub-WorkBuddy-key`，仅 `repo` 权限） | 30 天，2026-12-09 到期 |
+| `gitee` | `https://gitee.com/qiapicoco/typora-assets-image-cleaner.git` | Gitee 私人令牌（note: `Gitee-WorkBuddy-key`） | 永久（可手动设过期） |
 
 > 令牌只存在系统凭据管理器里，不在仓库、不在 git config 明文里。
-> 要轮换就在 GitHub / Gitee 后台重建，然后重跑一次 `git push` 让它重新记。
+> 命名统一成 `<平台>-WorkBuddy-key`，换机器时按这个名字在后台核对即可。
+>
+> - **GitHub**：PAT 名称不能改，只能「新建一个同权限的、再撤销旧的」。
+>   新建后记得把新值写进凭据管理器：
+>
+>   ```bash
+>   printf "protocol=https\nhost=github.com\nusername=qiapicoco\npassword=<新令牌>\n\n" | git credential approve
+>   ```
+>
+>   到期前重做一次即可（`git ls-remote origin` 能通就说明凭据是好的）。
+> - **Gitee**：私人令牌可以直接改名，路径「设置 → 私人令牌 → 修改」，
+>   提交时会要求输入账号密码做安全验证；改完令牌值不变，不用重配凭据。
 
 ## 发版流程
 
