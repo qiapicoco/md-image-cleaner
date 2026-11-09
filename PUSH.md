@@ -1,130 +1,55 @@
-# 推送说明（GitHub + Gitee）
+# 双远端同步说明
 
-代码已经全部提交在本地 `master`（commit `8743f38`），只差推到远端。
-两个远端都配好了：
+代码同时托管在 GitHub 和 Gitee，两边内容一致：
 
-```bash
-git remote -v
-# origin  git@github.com:qiapicoco/typora-assets-image-cleaner.git
-# gitee   https://gitee.com/qiapicoco/typora-assets-image-cleaner.git
-```
+- GitHub：<https://github.com/qiapicoco/typora-assets-image-cleaner>
+- Gitee：<https://gitee.com/qiapicoco/typora-assets-image-cleaner>
 
-当前卡在**凭据**上，实测情况：
-
-| 通道 | 结果 |
-| --- | --- |
-| SSH 22 端口 `git@github.com` | `Connection refused`（网络封了 22） |
-| SSH 443 端口 `ssh.github.com` | 通，但 `~/.ssh/id_rsa` 未被 GitHub 授权 → `Permission denied (publickey)` |
-| HTTPS 匿名读 | 可以（公开库） |
-| HTTPS 写 | 无有效 token（Credential Manager 里没有可用的） |
-| Gitee HTTPS 写 | 同样没有可用凭据 |
-
----
-
-## 方案一：用 HTTPS + 个人令牌（最快，两边通用）
-
-### 1. 建 GitHub 令牌
-
-打开 <https://github.com/settings/tokens/new>（Edge 里已登录的话直接能进）
-
-- **Note**：`md-image-cleaner push`
-- **Expiration**：7 days（用完就废，安全）
-- **Scopes**：只勾 **`repo`**（`repo` 展开后全部自动勾上）
-- 拉到底 → **Generate token** → 复制 `ghp_` 开头那一串
-
-### 2. 建 Gitee 令牌（可选，只推 GitHub 可跳过）
-
-<https://gitee.com/profile/personal_access_tokens/new>
-
-- **描述**：`md-image-cleaner push`
-- **权限**：勾 `projects`
-- 生成后复制
-
-### 3. 推送
-
-**方式 A：把令牌发我，我来推**（推完我会立刻从配置里清掉，不写进任何文件）
-
-**方式 B：自己跑**（把令牌当密码，账号名是 qiapicoco）
+## 日常推送
 
 ```bash
-cd E:/Project/Python/typora-assets-image-cleaner
-
-# GitHub
-git push https://qiapicoco:<令牌>@github.com/qiapicoco/typora-assets-image-cleaner.git master
-
-# Gitee
-git push https://qiapicoco:<令牌>@gitee.com/qiapicoco/typora-assets-image-cleaner.git master
+sh tools/push_all.sh
 ```
 
-> 令牌会留在 shell 历史里，推完建议 `git credential-manager erase` 清一下，
-> 或直接用方案二。
-
----
-
-## 方案二：SSH 密钥（一次配好，以后不用管）
+等价于：
 
 ```bash
-# 1. 让 22 端口被墙时走 443
-cat >> ~/.ssh/config <<'EOF'
-Host github.com
-  HostName ssh.github.com
-  Port 443
-  User git
-EOF
-
-# 2. 把公钥内容复制出来
-cat ~/.ssh/id_rsa.pub
+git push origin master --follow-tags   # GitHub
+git push gitee  master --follow-tags   # Gitee
 ```
 
-3. 粘贴到 <https://github.com/settings/ssh/new> → Add SSH key
+## 凭据
 
-4. 验证并推送：
+两个远端都是 HTTPS，凭据存在 Windows 凭据管理器（`git-credential-manager`），
+配好一次之后不会再提示输密码。
 
-```bash
-ssh -T git@github.com          # 应显示 Hi qiapicoco!
-git push origin master
-```
-
-> Gitee 的 SSH 走 22 端口，公钥贴到 <https://gitee.com/profile/sshkeys>，
-> 然后把 gitee 远端换成 SSH 地址即可。
-
----
-
-## 方案三：让系统的凭据管理器弹窗（最省事）
-
-在自己的终端里跑一次（会弹 GitHub 登录窗口，点授权）：
-
-```bash
-cd E:/Project/Python/typora-assets-image-cleaner
-git -c credential.helper=manager push https://github.com/qiapicoco/typora-assets-image-cleaner.git master
-```
-
-成功后凭据会被 Windows 凭据管理器记住，之后 `git push origin master` 直接通，
-Gitee 同理跑一次 `git push gitee master`。
-
----
-
-## 推完还需要做的两件事
-
-### 1. 打 tag（本地已建好，一起推）
-
-```bash
-git push origin v2.0.0
-git push gitee  v2.0.0
-```
-
-### 2. 传 Release 附件
-
-构建产物在 `.gitignore` 里（不入库），要手动传到 Release：
-
-| 文件 | 路径 | 体积 |
+| 远端 | 地址 | 凭据 |
 | --- | --- | --- |
-| 安装包 | `desktop/dist/MDImageCleaner_v2.0.0_安装版.exe` | 247 KB |
-| 绿色版 | `desktop/dist/MDImageCleaner.exe` | 301 KB |
-| VSCode 扩展 | `vscode-extension/dist/md-image-cleaner-2.0.0.vsix` | 8.8 KB |
+| `origin` | `https://github.com/qiapicoco/typora-assets-image-cleaner.git` | GitHub PAT（note: `md-image-cleaner-push-2`，仅 `repo` 权限） |
+| `gitee` | `https://gitee.com/qiapicoco/typora-assets-image-cleaner.git` | Gitee 私人令牌（note: `WorkBuddy-key`） |
 
-GitHub：<https://github.com/qiapicoco/typora-assets-image-cleaner/releases/new> → 选 tag `v2.0.0` → 拖附件
-Gitee：仓库 → 发行版 → 新建发行版 → 选 tag → 传附件
+> 令牌只存在系统凭据管理器里，不在仓库、不在 git config 明文里。
+> 要轮换就在 GitHub / Gitee 后台重建，然后重跑一次 `git push` 让它重新记。
 
-> Obsidian / Typora 插件不用传附件，`main.js`、`mdImageCleaner.js` 已经在仓库里了，
-> 用户直接下载拷进插件目录就行。
+## 发版流程
+
+1. 改 `desktop/res/app.rc` 里的版本号，同步改 `desktop/build.py` 和安装包脚本
+2. `python desktop/build.py`（exe，带体积门禁 600 KB）
+3. `python desktop/installer/build_installer.py`（NSIS 安装包）
+4. `python tools/build_plugins.py`（三个插件）
+5. `git tag -a vX.Y.Z -m "..."` + `sh tools/push_all.sh`
+6. 两边各建一个 Release，上传这 5 个附件（用 ASCII 文件名，GitHub 会把中文名吞掉）：
+
+| 附件 | 来源 |
+| --- | --- |
+| `MDImageCleaner.exe` | `desktop/dist/` |
+| `MDImageCleaner_vX.Y.Z_setup.exe` | `desktop/dist/`（中文名副本改成 ASCII 再传） |
+| `md-image-cleaner-obsidian-X.Y.Z.zip` | `obsidian-plugin/` 打包 |
+| `md-image-cleaner-typora-X.Y.Z.zip` | `typora-plugin/` 打包 |
+| `md-image-cleaner-X.Y.Z.vsix` | `vscode-extension/dist/` |
+
+## 关于 Gitee 自动同步 GitHub
+
+试过 Gitee 的「仓库镜像管理」：GitHub OAuth 授权走通了，但回调后跳回 Gitee 首页，
+镜像没建成。Gitee 那个页面写明「使用账号需绑定手机号」，估计卡在这。
+目前是手动双推，`tools/push_all.sh` 一行搞定。
