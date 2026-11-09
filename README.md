@@ -37,8 +37,8 @@
 
 到 [Releases](https://github.com/qiapicoco/typora-assets-image-cleaner/releases) 下：
 
-- `MDImageCleaner_v2.0.0_安装版.exe` —— 安装包（247 KB），自带卸载、桌面快捷方式
-- `MDImageCleaner.exe` —— 绿色版单文件（300 KB），拷到哪都能跑
+- `MDImageCleaner_v2.0.0_setup.exe` —— 安装包（247 KB），自带卸载、桌面快捷方式
+- `MDImageCleaner.exe` —— 绿色版单文件（301 KB），拷到哪都能跑
 
 ### 怎么用
 
