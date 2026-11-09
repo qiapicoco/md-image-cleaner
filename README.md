@@ -50,7 +50,7 @@
 ### 下载
 
 到 [GitHub Releases](https://github.com/qiapicoco/md-image-cleaner/releases)
-或 [Gitee 发行版](https://gitee.com/qiapicoco/md-image-cleaner/releases) 下载，两个源内容一致：
+或 [Gitee 发行版](https://gitee.com/qiapicoco/md-image-cleaner/releases) 下载（Gitee 是 GitHub 的镜像）：
 
 - `MDImageCleaner_v2.0.0_setup.exe` —— 安装包（247 KB），自带卸载、桌面快捷方式
 - `MDImageCleaner.exe` —— 绿色版单文件（301 KB），拷到哪都能跑
