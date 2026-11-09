@@ -18,6 +18,8 @@ import shutil
 import subprocess
 import sys
 
+import fixtures_layout
+
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PROJ = os.path.dirname(ROOT)
 FIXTURES = os.path.join(ROOT, "fixtures")
@@ -58,6 +60,7 @@ def compare(case):
         shutil.rmtree(work)
     os.makedirs(WORK, exist_ok=True)
     shutil.copytree(src, work)
+    fixtures_layout.ensure(case, work)
     md = os.path.join(work, case + ".md")
     out = os.path.join(work, "_result.json")
 
