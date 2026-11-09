@@ -2,7 +2,7 @@
 
 > 版本目标：v2.0.0（换实现、加形态，按三段式版本规则走主版本进位）
 > 状态：**已完成**（2026-11-09 落地，验证结果见 §9 完成情况）
-> 参考先例：`D:\WorkBuddydata\2026-10-26-20-50-54\用量台账\portable`（同机同工具链，1.14 MB exe + 0.64 MB 安装包）
+> 说明：本文是当时的决策记录，保留原文以便回看「为什么这么选」，部分预算数字与最终结果有出入，以 README 为准。
 
 ---
 
@@ -508,7 +508,7 @@ typora-plugin/
 | P4 | 安装包 | NSIS 3.x + MUI2，**247 KB**，用户级安装、默认非 C 盘、静默 `/S /D=` 可用 |
 | P5 | 像素对拍 | 空态差异 **0.50%**，填充态缩略图区除外全部对齐（剩字体抗锯齿相位差） |
 | P6 | Obsidian 插件 | `obsidian-plugin/main.js` 20 KB，含预览弹窗、设置页、右键菜单 |
-| P7 | VSCode + Typora | `.vsix` 9 KB；Typora 自定义插件 20 KB（配合 obgnail/typora_plugin） |
+| P7 | VSCode + Typora | `.vsix` 18 KB（含图标与 LICENSE）；Typora 自定义插件 20.8 KB（配合 obgnail/typora_plugin） |
 
 ### 实测体积
 
@@ -516,9 +516,9 @@ typora-plugin/
 |---|---|
 | `MDImageCleaner.exe` | 301.0 KB |
 | `MDImageCleaner_v2.0.0_安装版.exe` | 247 KB |
-| `obsidian-plugin/main.js` | 19.7 KB |
-| `md-image-cleaner-2.0.0.vsix` | 8.8 KB |
-| `typora-plugin/mdImageCleaner.js` | 20.3 KB |
+| `obsidian-plugin/main.js` | 20.2 KB |
+| `md-image-cleaner-2.0.0.vsix` | 17.6 KB |
+| `typora-plugin/mdImageCleaner.js` | 20.8 KB |
 
 ### 与原版的差异（有意为之）
 

@@ -10,7 +10,15 @@
 <p align="center">
   <a href="https://github.com/qiapicoco/typora-assets-image-cleaner">GitHub</a> ·
   <a href="https://gitee.com/qiapicoco/typora-assets-image-cleaner">Gitee</a> ·
-  <a href="https://github.com/qiapicoco/typora-assets-image-cleaner/releases">下载</a>
+  <a href="https://github.com/qiapicoco/typora-assets-image-cleaner/releases">下载</a> ·
+  <a href="CHANGELOG.md">更新记录</a>
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
+  <img src="https://img.shields.io/badge/version-2.0.0-brightgreen.svg" alt="Version 2.0.0">
+  <img src="https://img.shields.io/badge/size-301%20KB-informational.svg" alt="Size 301 KB">
+  <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-lightgrey.svg" alt="Platform Windows">
 </p>
 
 <p align="center">
@@ -30,7 +38,7 @@
 | --- | --- | --- | --- |
 | **桌面程序**（C++ 单文件 exe） | 双击就用，可安装 | **300 KB** | 谁都行，功能最全 |
 | **Obsidian 插件** | `.obsidian/plugins/md-image-cleaner/` | 20 KB | Obsidian 用户，不切窗口 |
-| **VSCode 扩展** | `.vsix` 一键装 | 9 KB | 在编辑器里直接清 |
+| **VSCode 扩展** | `.vsix` 一键装 | 18 KB | 在编辑器里直接清 |
 | **Typora 插件** | 配合 `obgnail/typora_plugin` | 20 KB | Typora 用户，快捷键呼出 |
 
 体积对比：原 PyQt5 版打包后 **28.7 MB** → 现在 **300 KB**，缩小 95 倍。
@@ -127,6 +135,7 @@ obsidian-plugin/ Obsidian 插件
 vscode-extension/VSCode 扩展
 typora-plugin/   Typora 插件（obgnail/typora_plugin 自定义插件）
 tools/           构建、截图、像素对拍、插件打包
+docs/            界面截图对拍图 + 重构设计记录（refactor-plan.md）
 legacy/          原 PyQt5 版本（作为回归基准，别删）
 ```
 
@@ -134,13 +143,18 @@ legacy/          原 PyQt5 版本（作为回归基准，别删）
 
 ## 自己构建
 
+| 要构建什么 | 需要 | 找不到时 |
+| --- | --- | --- |
+| 桌面程序 | [zig](https://ziglang.org/)（0.13+，当 C++ 预编译器用，不用装 Visual Studio） | 环境变量 `ZIG` 指向 `zig.exe` |
+| 安装包 | [NSIS](https://nsis.sourceforge.io/) 3.x | 环境变量 `MAKENSIS` 指向 `makensis.exe` |
+| 插件 | Node.js 18+（只用来做语法检查与对拍） | 没装就跳过语法检查，仍能产出 |
+| 图标 / 安装界面图 | Python 3.9+ 与 Pillow | `pip install pillow`（仅改图标时需要） |
+
 ### 桌面程序
 
-需要 [zig](https://ziglang.org/)（当 C++ 交叉编译器用，不装 Visual Studio）：
-
 ```bash
-python desktop/build.py            # → desktop/dist/MDImageCleaner.exe
-python desktop/installer/build_installer.py   # → MDImageCleaner_v2.0.0_安装版.exe（需 NSIS 3.x）
+python desktop/build.py                       # → desktop/dist/MDImageCleaner.exe（体积门禁 600 KB）
+python desktop/installer/build_installer.py   # → MDImageCleaner_v2.0.0_安装版.exe
 ```
 
 ### 插件
@@ -177,6 +191,29 @@ node tools/test_plugins.js    # 插件文件操作（含重名、路径穿越）
 
 ---
 
+## 参与贡献
+
+改判定逻辑之前请先看 [CONTRIBUTING.md](CONTRIBUTING.md)：四条对拍命令必须全绿——
+这个工具会真的移动用户的图片，误判的代价是数据丢失。
+
+简单说：判定核心只有 `desktop/src/core.h` 和 `shared/md-cleaner-core.js` 两处，
+改完跑 `python core/check.py`、`node shared/test_core.js`、`node tools/test_plugins.js`。
+
+---
+
 ## License
 
-MIT
+[MIT](LICENSE) © 2026 qiapicoco
+
+任何人都可以自由使用、修改、分发、商用，保留版权声明与许可声明即可。
+`legacy/` 下的原 PyQt5 实现与桌面版、插件同属本仓库，采用同一协议。
+
+第三方组件：
+
+| 组件 | 用途 | 协议 |
+| --- | --- | --- |
+| zig（仅构建期） | 交叉编译 C++ | MIT |
+| NSIS（仅构建期） | 生成安装包 | zlib/libpng |
+| [obgnail/typora_plugin](https://github.com/obgnail/typora_plugin)（可选，用户自装） | Typora 插件框架 | MIT |
+
+运行时**不依赖**任何第三方库：桌面版只链 Windows 系统 DLL，插件只用编辑器自带 API。
