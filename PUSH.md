@@ -15,7 +15,8 @@ git push origin master --follow-tags
 会在后台把 GitHub 的分支、标签、提交拉过来。
 
 想立刻看到效果，就去 Gitee 的「管理 → 仓库镜像管理」点那一行的 **更新**，
-确认后一般 3～10 秒完成。
+确认后一般几秒完成；碰上 Gitee 排队，状态会显示「更新中」，可能拖到几分钟，
+这时别干等，直接 `sh tools/push_all.sh` 推一次。
 
 ## 为什么还留着双推脚本
 
@@ -88,5 +89,5 @@ git push gitee  master --follow-tags   # Gitee，兜底
 ## 改名记录
 
 仓库原来叫 `typora-assets-image-cleaner`，2026-11-09 改为 `md-image-cleaner`。
-GitHub 侧旧地址会 301 重定向到新地址，已发出的 Release 下载链接不受影响。
-Gitee 侧不保证重定向，旧链接如需长期可用，请在仓库简介里注明新地址。
+两边都保留重定向（实测 GitHub 301、Gitee 302 跳新地址），已发出的 Release
+下载链接和 README 里的旧链接都还能用。
