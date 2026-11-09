@@ -2,7 +2,7 @@
 
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 qiapicoco
-# MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+# MD Image Cleaner - https://github.com/qiapicoco/md-image-cleaner
 
 """
 把 shared/md-cleaner-core.js 内联进三个插件，产出可直接安装的成品。
@@ -37,7 +37,7 @@ MARK = "/* ==== shared/md-cleaner-core.js 内联开始（勿手改，改 shared/
 BANNER = """\
 /* SPDX-License-Identifier: MIT
  * Copyright (c) 2026 qiapicoco
- * MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+ * MD Image Cleaner - https://github.com/qiapicoco/md-image-cleaner
  *
  * 本文件由 tools/build_plugins.py 生成，请改 %s，不要手改产物。
  */

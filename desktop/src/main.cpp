@@ -1,7 +1,7 @@
 /*
  * SPDX-License-Identifier: MIT
  * Copyright (c) 2026 qiapicoco
- * MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+ * MD Image Cleaner - https://github.com/qiapicoco/md-image-cleaner
  */
 
 // main.cpp —— MD Image Cleaner 桌面版（纯 Win32 + GDI/GDI+ 自绘）

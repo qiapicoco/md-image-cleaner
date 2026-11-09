@@ -42,7 +42,7 @@
 ### 1.1 目录结构
 
 ```
-typora-assets-image-cleaner/
+md-image-cleaner/
 ├── typora_assets_cleaner.py     25.8 KB / 643 行   ← 全部实现（单文件）
 ├── typora_assets_cleaner.spec   PyInstaller 配置（onefile + upx）
 ├── icon.ico                     62.7 KB（单帧 256×256 32bpp BMP，未压缩）
@@ -121,7 +121,7 @@ typora-assets-image-cleaner/
 窗口标题         Typora清理未引用图片
 左侧大标题       Typora未引用图片清理工具（微软雅黑 20pt Bold）
 说明（超链接）   此工具可帮助您清理Typora Markdown文件对应的.assets文件夹中未被引用的图片
-                → https://gitee.com/qiapicoco/typora-assets-image-cleaner
+                → https://gitee.com/qiapicoco/md-image-cleaner
 主按钮           选择Markdown文件并清理（14pt）
 进度标签         进度: / 就绪
 分组框           操作日志 / 图片预览（12pt Bold）
@@ -276,7 +276,7 @@ NSIS `SetCompressor /SOLID lzma` 对 0.4 MB 的 exe 压缩率约 55–60% → **
 ## 4. 新仓库结构
 
 ```
-typora-assets-image-cleaner/
+md-image-cleaner/
 ├── core/                          ← 语言无关的行为规格与测试向量（唯一真源）
 │   ├── SPEC.md                    行为契约（即本文 §1.4，逐条编号）
 │   ├── cases/                     5 组黄金用例（输入 md + 期望 JSON）

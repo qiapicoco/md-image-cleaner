@@ -2,7 +2,7 @@
 
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 qiapicoco
-# MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+# MD Image Cleaner - https://github.com/qiapicoco/md-image-cleaner
 
 """界面度量：把关键元素的位置量出来，用于让新版对齐原版像素。
 

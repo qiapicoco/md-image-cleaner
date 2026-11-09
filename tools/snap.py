@@ -2,7 +2,7 @@
 
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 qiapicoco
-# MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+# MD Image Cleaner - https://github.com/qiapicoco/md-image-cleaner
 
 """一键取图：启动 exe（可带 --open），等窗口出现后截图，再关闭。
 

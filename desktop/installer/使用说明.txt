@@ -84,7 +84,7 @@
 ----------------------------------------
   版本    2.0.0
   作者    qiapicoco
-  主页    https://github.com/qiapicoco/typora-assets-image-cleaner
+  主页    https://github.com/qiapicoco/md-image-cleaner
   体积    安装后约 300 KB（原 PyQt5 版 28.7 MB）
 
   程序写错了、或者有想要的功能，欢迎在主页提 issue。

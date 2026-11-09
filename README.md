@@ -8,9 +8,9 @@
 支持 **Typora / Obsidian / VSCode** —— 只要你用的是「笔记.md + 笔记.assets」这种同名资源夹。
 
 <p align="center">
-  <a href="https://github.com/qiapicoco/typora-assets-image-cleaner">GitHub</a> ·
-  <a href="https://gitee.com/qiapicoco/typora-assets-image-cleaner">Gitee</a> ·
-  <a href="https://github.com/qiapicoco/typora-assets-image-cleaner/releases">下载</a> ·
+  <a href="https://github.com/qiapicoco/md-image-cleaner">GitHub</a> ·
+  <a href="https://gitee.com/qiapicoco/md-image-cleaner">Gitee</a> ·
+  <a href="https://github.com/qiapicoco/md-image-cleaner/releases">下载</a> ·
   <a href="CHANGELOG.md">更新记录</a>
 </p>
 
@@ -49,8 +49,8 @@
 
 ### 下载
 
-到 [GitHub Releases](https://github.com/qiapicoco/typora-assets-image-cleaner/releases)
-或 [Gitee 发行版](https://gitee.com/qiapicoco/typora-assets-image-cleaner/releases) 下载，两个源内容一致：
+到 [GitHub Releases](https://github.com/qiapicoco/md-image-cleaner/releases)
+或 [Gitee 发行版](https://gitee.com/qiapicoco/md-image-cleaner/releases) 下载，两个源内容一致：
 
 - `MDImageCleaner_v2.0.0_setup.exe` —— 安装包（247 KB），自带卸载、桌面快捷方式
 - `MDImageCleaner.exe` —— 绿色版单文件（301 KB），拷到哪都能跑

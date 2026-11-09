@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 qiapicoco
-# MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+# MD Image Cleaner - https://github.com/qiapicoco/md-image-cleaner
 
 import sys
 import os
@@ -320,7 +320,7 @@ class MainWindow(QMainWindow):
         left_layout.addWidget(title_label)
 
         # 设置描述标签为超链接
-        desc_label = QLabel('<a href="https://gitee.com/qiapicoco/typora-assets-image-cleaner">此工具可帮助您清理Typora Markdown文件对应的.assets文件夹中未被引用的图片</a>')
+        desc_label = QLabel('<a href="https://gitee.com/qiapicoco/md-image-cleaner">此工具可帮助您清理Typora Markdown文件对应的.assets文件夹中未被引用的图片</a>')
         desc_label.setOpenExternalLinks(True)  # 允许点击链接打开外部浏览器
         desc_font = QFont("微软雅黑", 12)
         desc_label.setFont(desc_font)

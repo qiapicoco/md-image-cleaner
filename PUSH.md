@@ -2,8 +2,8 @@
 
 代码同时托管在 GitHub 和 Gitee，两边内容一致：
 
-- GitHub：<https://github.com/qiapicoco/typora-assets-image-cleaner>
-- Gitee：<https://gitee.com/qiapicoco/typora-assets-image-cleaner>
+- GitHub：<https://github.com/qiapicoco/md-image-cleaner>
+- Gitee：<https://gitee.com/qiapicoco/md-image-cleaner>
 
 ## 日常推送
 
@@ -25,8 +25,8 @@ git push gitee  master --follow-tags   # Gitee
 
 | 远端 | 地址 | 凭据 | 有效期 |
 | --- | --- | --- | --- |
-| `origin` | `https://github.com/qiapicoco/typora-assets-image-cleaner.git` | GitHub PAT（note: `GitHub-WorkBuddy-key`，仅 `repo` 权限） | 30 天，2026-12-09 到期 |
-| `gitee` | `https://gitee.com/qiapicoco/typora-assets-image-cleaner.git` | Gitee 私人令牌（note: `Gitee-WorkBuddy-key`） | 永久（可手动设过期） |
+| `origin` | `https://github.com/qiapicoco/md-image-cleaner.git` | GitHub PAT（note: `GitHub-WorkBuddy-key`，仅 `repo` 权限） | 30 天，2026-12-09 到期 |
+| `gitee` | `https://gitee.com/qiapicoco/md-image-cleaner.git` | Gitee 私人令牌（note: `Gitee-WorkBuddy-key`） | 永久（可手动设过期） |
 
 > 令牌只存在系统凭据管理器里，不在仓库、不在 git config 明文里。
 > 命名统一成 `<平台>-WorkBuddy-key`，换机器时按这个名字在后台核对即可。

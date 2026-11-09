@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: MIT
  * Copyright (c) 2026 qiapicoco
- * MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+ * MD Image Cleaner - https://github.com/qiapicoco/md-image-cleaner
  *
  * 本文件由 tools/build_plugins.py 生成，请改 vscode-extension/src/extension.js，不要手改产物。
  */
@@ -8,7 +8,7 @@
 /*
  * SPDX-License-Identifier: MIT
  * Copyright (c) 2026 qiapicoco
- * MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+ * MD Image Cleaner - https://github.com/qiapicoco/md-image-cleaner
  */
 
 /* =============================================================================
@@ -234,7 +234,7 @@ var MDCleanerCore = (typeof module === "object" && module.exports)
 /*
  * SPDX-License-Identifier: MIT
  * Copyright (c) 2026 qiapicoco
- * MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+ * MD Image Cleaner - https://github.com/qiapicoco/md-image-cleaner
  */
 
 /* =============================================================================

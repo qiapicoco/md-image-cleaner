@@ -2,7 +2,7 @@
 
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 qiapicoco
-# MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+# MD Image Cleaner - https://github.com/qiapicoco/md-image-cleaner
 
 """截图工具：按窗口标题定位窗口，截取客户区，存 PNG（可同时打印窗口矩形与 DPI）。"""
 import ctypes
