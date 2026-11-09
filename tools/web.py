@@ -1,3 +1,7 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 qiapicoco
+# MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+
 """浏览器自动化驱动器：封装 bsk CLI 的 context / observation 约束。
 
 bsk 0.4.2 的规则：
@@ -7,6 +11,9 @@ bsk 0.4.2 的规则：
 
 用法：
   python tools/web.py <command> [args...]
+
+这是开发期辅助脚本（发布 Release 时自动填表用），不是程序运行必需。
+bsk 本体路径可用环境变量 BSK 指定。
 """
 
 import json
@@ -16,7 +23,7 @@ import subprocess
 import sys
 import time
 
-BSK = r"C:\temp\bsk\bin\bsk.exe"
+BSK = os.environ.get("BSK") or r"C:\temp\bsk\bin\bsk.exe"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 os.environ["NO_PROXY"] = "127.0.0.1,localhost,::1"

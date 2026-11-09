@@ -1,3 +1,9 @@
+/*
+ * SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 qiapicoco
+ * MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+ */
+
 // core.h —— 纯函数核心：解析引用 / 扫描目录 / 差集 / 移动 / 日志文案
 // 与 legacy/typora_assets_cleaner.py 行为逐字对齐，见 core/SPEC.md。
 // 只依赖 windows.h 与 STL，不碰 UI，可被 CLI 与 GUI 共用。
@@ -381,7 +387,8 @@ inline JobResult RunClean(const std::wstring& mdFile, JobSink& sink,
 
     const size_t nb = res.unused.size();
     for (size_t i = 0; i < nb; ++i) {
-        if (i == 0 && !PathExists(deletedDir)) {
+        // 只有真的要搬文件时才建目录：--check 模式必须做到零副作用
+        if (execute && i == 0 && !PathExists(deletedDir)) {
             if (CreateDirectoryW(deletedDir.c_str(), nullptr))
                 sink.OnLog(text::CreatedBackupDir(deletedDir));
             else

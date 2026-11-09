@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 qiapicoco
+# MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+
 """
 构建脚本：zig cc 交叉编译 Windows 原生程序（无运行时依赖），带体积门禁。
 
@@ -23,7 +28,6 @@ SIZE_LIMIT = 600 * 1024
 ZIG_CANDIDATES = [
     os.environ.get("ZIG"),
     os.path.join(HERE, "..", "_toolchain", "ziglang", "zig.exe"),
-    "D:/WorkBuddydata/2026-10-26-20-50-54/_toolchain_zig/ziglang/zig.exe",
     shutil.which("zig"),
 ]
 

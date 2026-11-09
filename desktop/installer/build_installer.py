@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 qiapicoco
+# MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+
 """
 打包安装程序（NSIS）
 
@@ -11,6 +16,7 @@
 """
 import os
 import re
+import shutil
 import subprocess
 import sys
 
@@ -30,10 +36,11 @@ ART_FILES = [os.path.join(HERE, "setup_side.bmp"),
 
 # 安装包只用现成的 NSIS，不额外下载。按顺序找。
 NSIS_CANDS = [
+    os.environ.get("MAKENSIS"),
     os.path.join(ROOT, "_toolchain", "nsis", "Bin", "makensis.exe"),
     "C:/Program Files (x86)/NSIS/makensis.exe",
     "C:/Program Files/NSIS/makensis.exe",
-    "D:/WorkBuddydata/2026-10-26-20-50-54/用量台账/portable/_toolchain/nsis/Bin/makensis.exe",
+    shutil.which("makensis"),
 ]
 
 
@@ -122,7 +129,8 @@ def main():
 
     nsis = find_makensis()
     if not nsis:
-        print("[错误] 找不到 makensis.exe，装一个 NSIS 3.x 再重试")
+        print("[错误] 找不到 makensis.exe：装一个 NSIS 3.x（装到默认路径即可），"
+              "或用环境变量 MAKENSIS 指向它")
         return 1
 
     if not ensure_art():
