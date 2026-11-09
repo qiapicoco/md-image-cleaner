@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 qiapicoco
+# MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+
 """重置截图用 fixture（把 core/fixtures/basic 复制到 core/_shot/basic，删掉旧的 deleted_images）。"""
 import os
 import shutil

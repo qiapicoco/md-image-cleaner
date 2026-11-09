@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 qiapicoco
+# MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+
 """一键取图：启动 exe（可带 --open），等窗口出现后截图，再关闭。
 
 用法：python tools/snap.py 输出.png [md路径] [等待秒]

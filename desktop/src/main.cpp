@@ -1,3 +1,9 @@
+/*
+ * SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 qiapicoco
+ * MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+ */
+
 // main.cpp —— MD Image Cleaner 桌面版（纯 Win32 + GDI/GDI+ 自绘）
 // 界面几何全部对齐原版 PyQt5 截图（1200×750 @ 96DPI），见 core/SPEC.md
 #define WIN32_LEAN_AND_MEAN

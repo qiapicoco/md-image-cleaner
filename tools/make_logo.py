@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 qiapicoco
+# MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+
 """生成候选 logo（1024px 绘制后降采样），并输出多尺寸对照图用于挑选。"""
 import os
 

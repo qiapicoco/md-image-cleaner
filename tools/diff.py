@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 qiapicoco
+# MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+
 """像素对拍：比较两张同尺寸截图，输出差异率、差异热力图与分块定位。
 
 用法：python tools/diff.py docs/ref_original_empty.png docs/new_empty.png [out_prefix]

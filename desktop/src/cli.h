@@ -1,3 +1,9 @@
+/*
+ * SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 qiapicoco
+ * MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+ */
+
 // cli.h —— 命令行入口 + JSON 输出（供核心自测、Typora 插件降级调用）
 // 用法：
 //   MDImageCleaner.exe --check  <file.md> [--json] [--out <path>]   只分析不移动

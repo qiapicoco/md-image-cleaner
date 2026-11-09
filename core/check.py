@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 qiapicoco
+# MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+
 """
 黄金用例校验：把 desktop/dist/core_test.exe 跑在上述 fixture 副本上，
 与 core/cases/*.json（原版 Python 产出的基准）逐字段比对。

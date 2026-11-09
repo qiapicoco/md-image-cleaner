@@ -1,3 +1,9 @@
+/*
+ * SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 qiapicoco
+ * MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+ */
+
 /* eslint-disable */
 /**
  * JS 核心 vs Python 版黄金用例 对拍

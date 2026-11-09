@@ -1,3 +1,9 @@
+/*
+ * SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 qiapicoco
+ * MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+ */
+
 /* =============================================================================
  * Obsidian 插件主体（由 tools/build_plugins.py 内联 md-cleaner-core.js 后产出 main.js）
  * ========================================================================== */

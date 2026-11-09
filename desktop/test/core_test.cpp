@@ -1,3 +1,9 @@
+/*
+ * SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 qiapicoco
+ * MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+ */
+
 // 核心自测程序：把 CLI 逻辑编成控制台版，供 core/check.py 调用
 #include <windows.h>
 #include <shellapi.h>

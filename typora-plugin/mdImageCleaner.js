@@ -1,5 +1,16 @@
-/* 由 tools/build_plugins.py 生成，请改 src/plugin.js */
+/* SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 qiapicoco
+ * MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+ *
+ * 本文件由 tools/build_plugins.py 生成，请改 typora-plugin/src/plugin.js，不要手改产物。
+ */
 /* ==== shared/md-cleaner-core.js 内联开始（勿手改，改 shared/ 里的源文件） ==== */
+/*
+ * SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 qiapicoco
+ * MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+ */
+
 /* =============================================================================
  * md-cleaner-core.js —— MD Image Cleaner 的纯逻辑核心（JS 版）
  *
@@ -219,6 +230,12 @@
 var MDCleanerCore = (typeof module === "object" && module.exports)
     ? module.exports
     : (typeof self !== "undefined" ? self.MDCleanerCore : this.MDCleanerCore);
+
+/*
+ * SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 qiapicoco
+ * MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+ */
 
 /* =============================================================================
  * Typora 插件（obgnail/typora_plugin 的自定义插件形态）

@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 qiapicoco
+# MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+
 """
 把 shared/md-cleaner-core.js 内联进三个插件，产出可直接安装的成品。
 
@@ -27,6 +32,16 @@ ROOT = os.path.dirname(HERE)
 CORE = os.path.join(ROOT, "shared", "md-cleaner-core.js")
 
 MARK = "/* ==== shared/md-cleaner-core.js 内联开始（勿手改，改 shared/ 里的源文件） ==== */"
+
+# 产物统一带版权头（MIT），方便别人单独拿走一个 main.js 也知道出处与许可
+BANNER = """\
+/* SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 qiapicoco
+ * MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+ *
+ * 本文件由 tools/build_plugins.py 生成，请改 %s，不要手改产物。
+ */
+"""
 
 
 def read(p):
@@ -58,21 +73,21 @@ def core_source():
 def build_obsidian(core):
     src = read(os.path.join(ROOT, "obsidian-plugin", "src", "plugin.js"))
     out = os.path.join(ROOT, "obsidian-plugin", "main.js")
-    write(out, "/* 由 tools/build_plugins.py 生成，请改 src/plugin.js */\n" + core + src)
+    write(out, BANNER % "obsidian-plugin/src/plugin.js" + core + src)
     return out
 
 
 def build_vscode(core):
     src = read(os.path.join(ROOT, "vscode-extension", "src", "extension.js"))
     out = os.path.join(ROOT, "vscode-extension", "extension.js")
-    write(out, "/* 由 tools/build_plugins.py 生成，请改 src/extension.js */\n" + core + src)
+    write(out, BANNER % "vscode-extension/src/extension.js" + core + src)
     return out
 
 
 def build_typora(core):
     src = read(os.path.join(ROOT, "typora-plugin", "src", "plugin.js"))
     out = os.path.join(ROOT, "typora-plugin", "mdImageCleaner.js")
-    write(out, "/* 由 tools/build_plugins.py 生成，请改 src/plugin.js */\n" + core + src)
+    write(out, BANNER % "typora-plugin/src/plugin.js" + core + src)
     return out
 
 
@@ -91,6 +106,7 @@ def build_vsix():
   <Default Extension=".js" ContentType="application/javascript"/>
   <Default Extension=".md" ContentType="text/markdown"/>
   <Default Extension=".png" ContentType="image/png"/>
+  <Default Extension=".txt" ContentType="text/plain"/>
   <Default Extension=".vsixmanifest" ContentType="text/xml"/>
 </Types>"""
 
@@ -104,6 +120,7 @@ def build_vsix():
     <Tags>markdown,image,assets,clean</Tags>
     <Categories>Other</Categories>
     <GalleryFlags>Public</GalleryFlags>
+    <License>extension/LICENSE.txt</License>
     <Properties>
       <Property Id="Microsoft.VisualStudio.Code.Engine" Value="{engine}"/>
       <Property Id="Microsoft.VisualStudio.Code.ExtensionDependencies" Value=""/>
@@ -128,7 +145,11 @@ def build_vsix():
         z.writestr("extension.vsixmanifest", manifest)
         z.write(os.path.join(ext, "package.json"), "extension/package.json")
         z.write(os.path.join(ext, "extension.js"), "extension/extension.js")
-        for extra in ("README.md", "icon.png", "LICENSE.txt"):
+        # 开源协议随包分发：直接把仓库根目录的 LICENSE 塞进 vsix
+        license_src = os.path.join(ROOT, "LICENSE")
+        if os.path.isfile(license_src):
+            z.write(license_src, "extension/LICENSE.txt")
+        for extra in ("README.md", "icon.png"):
             p = os.path.join(ext, extra)
             if os.path.isfile(p):
                 z.write(p, "extension/" + extra)

@@ -20,10 +20,17 @@
     "obsidian"
   ],
   "icon": "icon.png",
+  "homepage": "https://github.com/qiapicoco/typora-assets-image-cleaner#readme",
+  "bugs": {
+    "url": "https://github.com/qiapicoco/typora-assets-image-cleaner/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/qiapicoco/typora-assets-image-cleaner"
   },
+  "extensionKind": [
+    "workspace"
+  ],
   "main": "./extension.js",
   "activationEvents": [
     "onCommand:mdImageCleaner.clean",

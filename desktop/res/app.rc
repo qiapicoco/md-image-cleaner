@@ -1,3 +1,7 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2026 qiapicoco
+// MD Image Cleaner - https://github.com/qiapicoco/typora-assets-image-cleaner
+
 #include <windows.h>
 
 APPICON ICON "app.ico"
@@ -20,7 +24,7 @@ BEGIN
             VALUE "FileDescription",  "MD Image Cleaner"
             VALUE "FileVersion",      "2.0.0.0"
             VALUE "InternalName",     "MDImageCleaner"
-            VALUE "LegalCopyright",   "qiapicoco"
+            VALUE "LegalCopyright",   "Copyright (c) 2026 qiapicoco"
             VALUE "OriginalFilename", "MDImageCleaner.exe"
             VALUE "ProductName",      "MD Image Cleaner"
             VALUE "ProductVersion",   "2.0.0.0"
