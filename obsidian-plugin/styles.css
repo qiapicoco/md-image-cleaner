@@ -1,0 +1,119 @@
+/* MD Image Cleaner —— 预览弹窗样式
+   刻意不用 flex gap（老版本 Electron 不认），间距一律 margin。 */
+
+.mdic-head {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.mdic-path {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  word-break: break-all;
+}
+
+.mdic-stats {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #555;
+  font-weight: 600;
+}
+
+.mdic-empty {
+  color: var(--text-muted);
+  padding: 18px 0;
+}
+
+/* 预览网格：定宽卡片 + 自动换行，容器窄了就少放几列 */
+.mdic-grid {
+  display: block;
+  max-height: 58vh;
+  overflow-y: auto;
+  padding: 4px;
+  background: #f0f0f0;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.mdic-card {
+  display: inline-block;
+  vertical-align: top;
+  width: 172px;
+  margin: 10px 8px;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  position: relative;
+}
+
+.mdic-card-used {
+  opacity: 0.82;
+}
+
+.mdic-box {
+  width: 154px;
+  height: 154px;
+  line-height: 154px;
+  text-align: center;
+  background: #fafafa;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.mdic-box img {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+.mdic-name {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #333;
+  word-break: break-all;
+  line-height: 1.35;
+}
+
+.mdic-status {
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.mdic-bad { color: #ff0000; }
+.mdic-ok  { color: #008000; }
+
+.mdic-cb {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.mdic-bar {
+  margin-top: 14px;
+  text-align: right;
+}
+
+.mdic-bar button {
+  margin-left: 8px;
+}
+
+.mdic-count {
+  float: left;
+  font-size: 13px;
+  color: #555;
+  line-height: 30px;
+}
+
+.mdic-hint {
+  color: var(--text-muted);
+  font-size: 12px;
+}

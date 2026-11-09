@@ -1,0 +1,33 @@
+{
+  "case": "noassets",
+  "md": "noassets.md",
+  "assets": "noassets.assets",
+  "logs": [
+    "开始分析文件: noassets.md\n",
+    "警告: 在Markdown文件中未找到引用的图片\n",
+    "错误: 文件夹 <FIXTURE>\\noassets.assets 不存在\n",
+    "错误: 在 <FIXTURE>\\noassets.assets 中未找到图片文件\n"
+  ],
+  "progress": [
+    [
+      5,
+      "准备分析..."
+    ],
+    [
+      15,
+      "正在查找引用图片..."
+    ],
+    [
+      100,
+      "操作完成"
+    ]
+  ],
+  "previews": [],
+  "stats": [
+    0,
+    0
+  ],
+  "finished": 0,
+  "finalAssets": [],
+  "finalDeleted": []
+}

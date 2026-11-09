@@ -1,0 +1,10 @@
+{
+  "id": "md-image-cleaner",
+  "name": "MD Image Cleaner",
+  "version": "2.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "找出笔记同名 .assets 文件夹里没被引用的图片，先看缩略图确认，再移动到 deleted_images。只移动不删除。",
+  "author": "qiapicoco",
+  "authorUrl": "https://github.com/qiapicoco",
+  "isDesktopOnly": false
+}

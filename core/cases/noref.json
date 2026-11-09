@@ -1,0 +1,87 @@
+{
+  "case": "noref",
+  "md": "noref.md",
+  "assets": "noref.assets",
+  "logs": [
+    "开始分析文件: noref.md\n",
+    "警告: 在Markdown文件中未找到引用的图片\n",
+    "在 <FIXTURE>\\noref.assets 中找到 2 张图片\n",
+    "其中 2 张图片未在Markdown中引用\n",
+    "开始清理未引用的图片...\n",
+    "创建备份文件夹: <FIXTURE>\\noref.assets\\deleted_images\n",
+    "已移动: x1.png -> deleted_images\n",
+    "已移动: x2.png -> deleted_images\n",
+    "\n清理完成！耗时: <T> 秒\n",
+    "共移动 2 张未引用的图片到备份文件夹\n"
+  ],
+  "progress": [
+    [
+      5,
+      "准备分析..."
+    ],
+    [
+      15,
+      "正在查找引用图片..."
+    ],
+    [
+      20,
+      "正在分析图片引用..."
+    ],
+    [
+      25,
+      "找到 2 张未引用的图片"
+    ],
+    [
+      25,
+      "正在准备预览..."
+    ],
+    [
+      40,
+      "正在准备预览..."
+    ],
+    [
+      40,
+      "预览准备完成"
+    ],
+    [
+      45,
+      "准备清理..."
+    ],
+    [
+      50,
+      "已清理 1/2"
+    ],
+    [
+      95,
+      "已清理 2/2"
+    ],
+    [
+      98,
+      "正在整理结果..."
+    ],
+    [
+      100,
+      "清理完成"
+    ]
+  ],
+  "previews": [
+    [
+      "x1.png",
+      false
+    ],
+    [
+      "x2.png",
+      false
+    ]
+  ],
+  "stats": [
+    2,
+    0
+  ],
+  "finished": 2,
+  "finalAssets": [],
+  "finalDeleted": [
+    "x1.png",
+    "x2.png"
+  ]
+}

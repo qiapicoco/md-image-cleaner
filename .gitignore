@@ -1,0 +1,38 @@
+# ---- 构建产物（源码都在，随时可重建）----
+/desktop/dist/
+/desktop/res/app.res
+/desktop/installer/*.bmp
+/vscode-extension/dist/
+
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+
+# ---- 自测用的临时工作目录（每跑一次测试就重建）----
+/core/_shot/
+/core/_check/
+/core/_run/
+
+# ---- 像素对拍产生的中间图（ref_/new_ 那几张成品图保留）----
+/docs/_*.png
+
+# ---- 编辑器 / 系统 ----
+/.idea/
+/shelf/
+/workspace.xml
+/httpRequests/
+/dataSources/
+/dataSources.local.xml
+Thumbs.db
+desktop.ini
+
+# ---- 老版本残留（源码入库存档；PyInstaller 产物 29 MB，不入库，需要时自己打包）----
+legacy/build/
+legacy/dist/
+legacy/*.exe
+
+# ---- 老版本根目录产物 ----
+/typora_assets_cleaner.spec
+/Typora_清理未引用图片工具.exe
+/typora_assets_cleaner.exe

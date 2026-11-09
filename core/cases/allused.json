@@ -1,0 +1,65 @@
+{
+  "case": "allused",
+  "md": "allused.md",
+  "assets": "allused.assets",
+  "logs": [
+    "开始分析文件: allused.md\n",
+    "在 <FIXTURE>\\allused.assets 中找到 2 张图片\n",
+    "其中 0 张图片未在Markdown中引用\n",
+    "没有需要清理的图片\n"
+  ],
+  "progress": [
+    [
+      5,
+      "准备分析..."
+    ],
+    [
+      15,
+      "正在查找引用图片..."
+    ],
+    [
+      20,
+      "正在分析图片引用..."
+    ],
+    [
+      25,
+      "找到 0 张未引用的图片"
+    ],
+    [
+      25,
+      "正在准备预览..."
+    ],
+    [
+      40,
+      "正在准备预览..."
+    ],
+    [
+      40,
+      "预览准备完成"
+    ],
+    [
+      100,
+      "清理完成"
+    ]
+  ],
+  "previews": [
+    [
+      "a.png",
+      true
+    ],
+    [
+      "b.png",
+      true
+    ]
+  ],
+  "stats": [
+    0,
+    2
+  ],
+  "finished": 0,
+  "finalAssets": [
+    "a.png",
+    "b.png"
+  ],
+  "finalDeleted": []
+}

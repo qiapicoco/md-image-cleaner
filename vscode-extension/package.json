@@ -1,0 +1,80 @@
+{
+  "name": "md-image-cleaner",
+  "displayName": "MD Image Cleaner",
+  "description": "找出笔记同名 .assets 文件夹里没被引用的图片，先看缩略图确认，再移动到 deleted_images。只移动不删除。",
+  "version": "2.0.0",
+  "publisher": "qiapicoco",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "markdown",
+    "image",
+    "assets",
+    "clean",
+    "typora",
+    "obsidian"
+  ],
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qiapicoco/typora-assets-image-cleaner"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onCommand:mdImageCleaner.clean",
+    "onCommand:mdImageCleaner.check"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "mdImageCleaner.clean",
+        "title": "预览并清理未引用图片",
+        "category": "MD Image Cleaner"
+      },
+      {
+        "command": "mdImageCleaner.check",
+        "title": "只统计不移动",
+        "category": "MD Image Cleaner"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "mdImageCleaner.clean",
+          "when": "resourceExtname == .md",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "mdImageCleaner.clean",
+          "when": "resourceExtname == .md",
+          "group": "mdImageCleaner"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "MD Image Cleaner",
+      "properties": {
+        "mdImageCleaner.enhanced": {
+          "type": "boolean",
+          "default": true,
+          "description": "额外识别 ![[图片.png]] 与 <img src=\"图片.png\"> 形式的引用（避免误清理）"
+        },
+        "mdImageCleaner.deletedFolder": {
+          "type": "string",
+          "default": "deleted_images",
+          "description": "未引用图片移动到哪里（相对 .assets 文件夹）"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "test": "node ../shared/test_core.js"
+  }
+}

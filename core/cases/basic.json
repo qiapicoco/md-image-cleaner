@@ -1,0 +1,128 @@
+{
+  "case": "basic",
+  "md": "basic.md",
+  "assets": "basic.assets",
+  "logs": [
+    "开始分析文件: basic.md\n",
+    "在 <FIXTURE>\\basic.assets 中找到 6 张图片\n",
+    "其中 3 张图片未在Markdown中引用\n",
+    "开始清理未引用的图片...\n",
+    "创建备份文件夹: <FIXTURE>\\basic.assets\\deleted_images\n",
+    "已移动: 2024_photo_04.png -> deleted_images\n",
+    "已移动: 2024_photo_05.png -> deleted_images\n",
+    "已移动: 2024_photo_06.png -> deleted_images\n",
+    "\n清理完成！耗时: <T> 秒\n",
+    "共移动 3 张未引用的图片到备份文件夹\n"
+  ],
+  "progress": [
+    [
+      5,
+      "准备分析..."
+    ],
+    [
+      15,
+      "正在查找引用图片..."
+    ],
+    [
+      20,
+      "正在分析图片引用..."
+    ],
+    [
+      25,
+      "找到 3 张未引用的图片"
+    ],
+    [
+      25,
+      "正在准备预览..."
+    ],
+    [
+      32,
+      "正在准备预览..."
+    ],
+    [
+      40,
+      "正在准备预览..."
+    ],
+    [
+      34,
+      "正在准备预览..."
+    ],
+    [
+      37,
+      "正在准备预览..."
+    ],
+    [
+      40,
+      "正在准备预览..."
+    ],
+    [
+      40,
+      "预览准备完成"
+    ],
+    [
+      45,
+      "准备清理..."
+    ],
+    [
+      50,
+      "已清理 1/3"
+    ],
+    [
+      72,
+      "已清理 2/3"
+    ],
+    [
+      95,
+      "已清理 3/3"
+    ],
+    [
+      98,
+      "正在整理结果..."
+    ],
+    [
+      100,
+      "清理完成"
+    ]
+  ],
+  "previews": [
+    [
+      "2024_photo_04.png",
+      false
+    ],
+    [
+      "2024_photo_05.png",
+      false
+    ],
+    [
+      "2024_photo_06.png",
+      false
+    ],
+    [
+      "2024_photo_01.png",
+      true
+    ],
+    [
+      "2024_photo_03.png",
+      true
+    ],
+    [
+      "2024_photo_02.jpg",
+      true
+    ]
+  ],
+  "stats": [
+    3,
+    3
+  ],
+  "finished": 3,
+  "finalAssets": [
+    "2024_photo_01.png",
+    "2024_photo_02.jpg",
+    "2024_photo_03.png"
+  ],
+  "finalDeleted": [
+    "2024_photo_04.png",
+    "2024_photo_05.png",
+    "2024_photo_06.png"
+  ]
+}

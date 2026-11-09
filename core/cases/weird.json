@@ -1,0 +1,130 @@
+{
+  "case": "weird",
+  "md": "weird.md",
+  "assets": "weird.assets",
+  "logs": [
+    "开始分析文件: weird.md\n",
+    "在 <FIXTURE>\\weird.assets 中找到 4 张图片\n",
+    "其中 2 张图片未在Markdown中引用\n",
+    "开始清理未引用的图片...\n",
+    "创建备份文件夹: <FIXTURE>\\weird.assets\\deleted_images\n",
+    "已移动: html_only.png -> deleted_images\n",
+    "已移动: wiki_only.png -> deleted_images\n",
+    "\n清理完成！耗时: <T> 秒\n",
+    "共移动 2 张未引用的图片到备份文件夹\n"
+  ],
+  "progress": [
+    [
+      5,
+      "准备分析..."
+    ],
+    [
+      15,
+      "正在查找引用图片..."
+    ],
+    [
+      20,
+      "正在分析图片引用..."
+    ],
+    [
+      25,
+      "找到 2 张未引用的图片"
+    ],
+    [
+      25,
+      "正在准备预览..."
+    ],
+    [
+      40,
+      "正在准备预览..."
+    ],
+    [
+      35,
+      "正在准备预览..."
+    ],
+    [
+      40,
+      "正在准备预览..."
+    ],
+    [
+      45,
+      "正在准备预览..."
+    ],
+    [
+      50,
+      "正在准备预览..."
+    ],
+    [
+      55,
+      "正在准备预览..."
+    ],
+    [
+      40,
+      "预览准备完成"
+    ],
+    [
+      45,
+      "准备清理..."
+    ],
+    [
+      50,
+      "已清理 1/2"
+    ],
+    [
+      95,
+      "已清理 2/2"
+    ],
+    [
+      98,
+      "正在整理结果..."
+    ],
+    [
+      100,
+      "清理完成"
+    ]
+  ],
+  "previews": [
+    [
+      "html_only.png",
+      false
+    ],
+    [
+      "wiki_only.png",
+      false
+    ],
+    [
+      "remote.jpg",
+      true
+    ],
+    [
+      "不存在.png",
+      true
+    ],
+    [
+      "图片 1 号.png",
+      true
+    ],
+    [
+      "UPPER.PNG",
+      true
+    ],
+    [
+      "nested.png",
+      true
+    ]
+  ],
+  "stats": [
+    2,
+    5
+  ],
+  "finished": 2,
+  "finalAssets": [
+    "UPPER.PNG",
+    "notes.txt",
+    "图片 1 号.png"
+  ],
+  "finalDeleted": [
+    "html_only.png",
+    "wiki_only.png"
+  ]
+}
